@@ -1,0 +1,48 @@
+div.reward {
+  padding: 70px 20px;
+  background-color: rgba(189, 123, 123, 0.44);
+  h3.title {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 56px;
+    font-weight: 100;
+  }
+  div.row {
+    margin-top: 70px;
+    display: flex;
+    div.col {
+      background-color: rgba(240, 240, 240, 0.45);
+      width: 20%;
+      margin: 0 3px;
+      padding: 30px;
+      padding-top: 40px;
+      padding-bottom: 80px;
+
+      h3.col-title {
+        text-align: center;
+        color: white;
+        font-size: 36px;
+        font-weight: 100;
+        margin: 0;
+      }
+      div.divide {
+        height: 2px;
+        background-color: white;
+        width: 30px;
+        margin: 30px auto;
+      }
+      p.col-content {
+        text-align: center;
+        margin: 0;
+        color: white;
+      }
+    }
+  }
+  h3.footer {
+    text-align: center;
+    color: white;
+    margin: 70px 0 0;
+    font-weight: 100;
+  }
+}

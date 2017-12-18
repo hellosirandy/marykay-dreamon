@@ -1,0 +1,35 @@
+@import '../../../sass/variable.scss';
+.key-vision {
+  background-image: url('/assets/imgs/key-background.jpg');
+  width: 100%;
+  height: 1000px;
+  div.content {
+    position: absolute;
+    width: 60%;
+    top: 27%;
+    left: 15%;
+    img {
+      width: 90%;
+      height: auto;
+    }
+    h3.bottom-text {
+      text-align: right;
+      font-size: 20px;
+      color: $marykay-pink;
+    }
+    button.go-apply-btn {
+      float: right;
+      background-color: transparent;
+      border: solid 2px white;
+      padding: 10px 50px;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+      transition: color 0.3s ease, border 0.3s ease;
+      &:hover {
+        color: $marykay-fuchsia;
+        border: solid 2px $marykay-fuchsia;
+      }
+    }
+  }
+}

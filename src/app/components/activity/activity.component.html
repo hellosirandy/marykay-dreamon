@@ -1,0 +1,32 @@
+<div class="activity" #content>
+  <h3 class="title" appAppear (appear)="onAppear('titleState')" [@titleState]="titleState">
+    How can I <br>
+    become a MK <br>
+    brand manager?
+  </h3>
+  <div class="something" appAppear (appear)="onAppear('somethingState')" [@titleState]="somethingState"></div>
+  <h4 class="subtitle" appAppear (appear)="onAppear('firstSubtitleState')" [@contentState]="firstSubtitleState">
+    什麼是校園品牌經理？如何成為校園品牌經理？
+  </h4>
+  <div class="content">
+    <div class="subcontent">
+      <div class="section first" appAppear (appear)="onAppear('firstContentState')" [@contentState]="firstContentState">
+        <p>正邁入55週年的全球百大公司之一的Mary Kay，為了延續品牌企業堅持回饋社會、栽培後進的理念，特別於2018年盛大舉辦校園品牌經理活動。</p>
+        <p>在整個徵選過程，你不僅可以學到專業的企業企劃案書寫能力、在1對1企業導師的帶領下實際執行所有腦海中的好點子！</p>
+        <p>另外，你將有機會深入了解玫琳凱的企業文化、產品、行銷模式，全面性學習一個成功的企業在執行案子時會遇到的各種情況！</p>
+        
+      </div>
+      <div class="section second">
+        <h4 class="subtitle" appAppear (appear)="onAppear('secondSubtitleState')" [@contentState]="secondSubtitleState">
+          報名資格
+        </h4>
+        <p appAppear (appear)="onAppear('secondContentState')" [@contentState]="secondContentState">不管是大一大二大三大四或是研究所以上，我們通通歡迎！不怕沒經驗，只怕沒有熱情! 只要隸屬同大專院校，不分科系、不分年紀，三到五人一組就可以報名了！</p>
+      </div>
+      
+    </div>
+    <div class="img-div">
+      <img src="/assets/imgs/activity.jpg" alt="">
+    </div>
+  </div>
+  
+</div>

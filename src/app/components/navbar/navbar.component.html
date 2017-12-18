@@ -1,0 +1,14 @@
+<div class="navbar">
+  <div class="buttons" *ngIf="selectedSection">
+    <a *ngFor="let button of buttons"
+      [ngClass]="{'selected': selectedSection === button.section}"
+      (click)="handleButtonClick(button.section)">
+      {{button.content}}
+    </a>
+  </div>
+  <div class="buttons" *ngIf="!selectedSection">
+    <a *ngFor="let button of buttons" routerLink="/">
+      {{button.content}}
+    </a>
+  </div>
+</div>

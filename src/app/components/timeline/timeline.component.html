@@ -1,0 +1,15 @@
+<div class="timeline" #content>
+  <div class="titles">
+    <h3 class="title" appAppear (appear)="onAppear('titleState')" [@titleState]="titleState">
+      TIMELINE
+    </h3>
+    <div class="something" appAppear (appear)="onAppear('somethingState')" [@titleState]="somethingState"></div>
+    <h4 class="subtitle" appAppear (appear)="onAppear('subtitleState')" [@titleState]="subtitleState">活動流程</h4>
+  </div>
+  <div class="content">
+    <app-timeline-item *ngFor="let item of items"
+      [item]="item">
+    </app-timeline-item>
+  </div>
+  <div class="line" appAppear (appear)="onAppear('lineState')" [@lineState]="lineState"></div>
+</div>

@@ -1,0 +1,90 @@
+@import '../../../sass/variable.scss';
+.about {
+  .section {
+    width: 100%;
+    display: flex;
+    .col {
+      display: inline-block;
+    }
+    .content {
+      box-sizing: border-box;
+      background-color: $background-pink;
+      padding: 70px;
+      h3.title {
+        font-size: 4rem;
+        color: white;
+        margin: 25px 0;
+      }
+      p {
+        color: white;
+        font-size: 0.9rem;
+        line-height: 1.8;
+      }
+    }
+    &.first-section {
+      .first-col {
+        width: 40%;
+      }
+      .second-col {
+        width: 60%;
+        background-image: url('/assets/imgs/about-1.jpg');
+        background-size: 80%;
+        background-position: 150%;
+      }
+    }
+    &.second-section {
+      .first-col {
+        width: 45%;
+        background-image: url('/assets/imgs/about-2.jpg');
+      }
+      .second-col {
+        width: 30%;
+      }
+      .third-col {
+        width: 25%;
+        background-image: url('/assets/imgs/about-3.jpg');
+        // background-clip: border-box;
+        background-size: 45%;
+        background-position: 110%;
+      }
+    }
+    &.third-section {
+      background-image: url('/assets/imgs/about-4.jpg');
+      min-height: 550px;
+      .first-col {
+        width: 40%;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      .second-col {
+        width: 60%;
+        background-color: rgba(226, 148, 145, 0.144);
+      }
+      .col {
+        display: -webkit-flex;
+        display:         flex;
+        -webkit-align-items: center;
+                align-items: center;
+        -webkit-justify-content: center;
+                justify-content: center;
+        h3 {
+          text-align: center;
+          color: white;
+          font-size: 5.7rem;
+          margin: 30px 0;
+        }
+        p {
+          color: white;
+          font-size: 1.2rem;
+          font-weight: lighter;
+          line-height: 1.4;
+          letter-spacing: 2px;
+        }
+        h4 {
+          color: rgb(248, 206, 206);
+          font-size: 2.2rem;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

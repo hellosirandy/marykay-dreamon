@@ -1,0 +1,28 @@
+@import '../../../sass/variable.scss';
+.navbar {
+  height: 70px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: 100;
+  .buttons {
+    float: right;
+    line-height: 70px;
+    a {
+      text-decoration: unset;
+      font-size: 17px;
+      color: white;
+      margin-right: 25px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $marykay-pink;
+      }
+      &.selected {
+        color: $marykay-pink;
+      }
+    }
+  }
+}

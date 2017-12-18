@@ -1,0 +1,11 @@
+<div class="reward" #content>
+  <h3 class="title">REWARD 獎勵</h3>
+  <div class="row">
+    <div class="col" *ngFor="let item of items">
+      <h3 class="col-title">{{item.title}}</h3>
+      <div class="divide"></div>
+      <p class="col-content" [innerHtml]="item.content"></p>
+    </div>
+  </div>
+  <h3 class="footer">並有機會得到大中華區總經理親筆推薦信 ＋Mary Kay Taiwan 實習機會</h3>
+</div>

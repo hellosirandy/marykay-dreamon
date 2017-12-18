@@ -1,0 +1,7 @@
+<div class="key-vision parallax" #content>
+  <div class="content">
+    <img appAppear (appear)="onAppear('img')" src="/assets/imgs/key-text.png" alt="" [@keyImageState]="keyImageState">
+    <h3 appAppear (appear)="onAppear('title')" class="bottom-text" [@titleButtonState]="titleState">Register Now 報名專區</h3>
+    <button routerLink="/register" appAppear (appear)="onAppear('button')" class="go-apply-btn" [@titleButtonState]="buttonState">Fly to Dallas</button>
+  </div>
+</div>
