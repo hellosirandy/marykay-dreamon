@@ -25,8 +25,8 @@
     <p *ngFor="let p of item.content.paragraphs">
       {{p}}
     </p>
-    <div class="row">
-      <button *ngIf="item.title==='MAR'">> What is MaryKayChallenges</button>
+    <div *ngIf="item.title==='MAR'" class="row">
+      <button>> What is MaryKayChallenges</button>
     </div>
   </div>
   <div class="one-line-content" *ngIf="!item.content.title">

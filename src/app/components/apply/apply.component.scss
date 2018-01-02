@@ -1,6 +1,7 @@
 div.apply {
   background-color: rgba(51, 51, 51, 0.72);
   padding: 130px;
+  overflow-x: hidden;
   div.flex-box {
     display: flex;
     justify-content: center;
@@ -52,4 +53,33 @@ div.apply {
       border: solid 1px rgb(197, 16, 82);
     }
   }
+}
+
+@media (max-width: 767px) {
+  div.apply {
+    padding: 80px 20px;
+    div.flex-box {
+      &.first {
+        margin-bottom: 50px;
+      }
+    }
+    div.logo {
+      padding: 20px;
+      h4.subtitle {
+        font-size: 10px;
+      }
+      h3.title {
+        font-size: 30px;
+      }
+      div.divider {
+        height: 3px;
+        width: 40px;
+        margin: 30px auto;
+      }
+      h4.footer {
+        font-size: 15px;
+      }
+    }
+  }
+  
 }

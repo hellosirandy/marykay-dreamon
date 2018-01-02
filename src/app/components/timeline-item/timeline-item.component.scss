@@ -28,7 +28,6 @@ div.timeline-item {
     top: 5px;
   }
   h4.subtitle {
-    
     font-weight: lighter;
     margin: 0;
     font-size: 18px;
@@ -80,6 +79,64 @@ div.timeline-item {
       font-weight: lighter;
       &.big {
         font-size: 30px;
+      }
+    }
+  }
+}
+
+@media (max-height: 767px) {
+  div.timeline-item {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    div.left {
+      left: -80px;
+      top: 0px;
+    }
+    div.right {
+      left: 16px;
+      top: 0px;
+    }
+    h3.title {
+      margin: 0;
+      font-size: 16px;
+    }
+    h4.subtitle {
+      font-size: 10px;
+      line-height: 16px;
+    }
+    div.circle {
+      width: 14px;
+      height: 14px;
+      left: -7px;
+      top: 2px;
+    }
+    .content {
+      margin-left: 20px;
+      padding: 10px;
+      width: calc(100% - 50px);
+      h3.content-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 10px;
+        line-height: 1.6;
+      }
+      div.row {
+        button {
+          background-color: transparent;
+          padding: 5px 8px;
+          font-size: 8px;
+        }
+      }
+    }
+    .one-line-content {
+      margin-left: 20px;
+      h3.one-line-title {
+        font-size: 14px;
+        &.big {
+          font-size: 20px;
+        }
       }
     }
   }

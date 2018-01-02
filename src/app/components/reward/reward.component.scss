@@ -1,6 +1,8 @@
 div.reward {
+  overflow-x: hidden;
   padding: 70px 20px;
   background-color: rgba(189, 123, 123, 0.44);
+  overflow-x: hidden;
   h3.title {
     margin: 0;
     text-align: center;
@@ -15,9 +17,7 @@ div.reward {
       background-color: rgba(240, 240, 240, 0.45);
       width: 20%;
       margin: 0 3px;
-      padding: 30px;
-      padding-top: 40px;
-      padding-bottom: 80px;
+      padding: 40px 30px 80px;
 
       h3.col-title {
         text-align: center;
@@ -44,5 +44,36 @@ div.reward {
     color: white;
     margin: 70px 0 0;
     font-weight: 100;
+  }
+}
+
+@media (max-width: 767px) {
+  div.reward {
+    padding: 40px 10px;
+    h3.title {
+      font-size: 28px;
+    }
+    div.row {
+      margin-top: 40px;
+      div.col {
+        padding: 6px;
+        h3.col-title {
+          font-size: 15px;
+        }
+        div.divide {
+          height: 1.5px;
+          background-color: white;
+          width: 20px;
+          margin: 10px auto;
+        }
+        p.col-content {
+          font-size: 9px;
+        }
+      }
+    }
+    h3.footer {
+      font-size: 0.7rem;
+      margin: 30px 0 0;
+    }
   }
 }

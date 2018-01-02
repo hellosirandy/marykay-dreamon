@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar" #content>
   <div class="buttons" *ngIf="selectedSection">
     <a *ngFor="let button of buttons"
       [ngClass]="{'selected': selectedSection === button.section}"

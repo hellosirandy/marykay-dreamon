@@ -1,4 +1,4 @@
-import { animate, Component, ElementRef, OnInit, ViewChild, state, style, transition, trigger } from '@angular/core';
+import { animate, Component, ElementRef, ViewChild, state, style, transition, trigger } from '@angular/core';
 
 @Component({
   selector: 'app-key-vision',
@@ -31,7 +31,7 @@ import { animate, Component, ElementRef, OnInit, ViewChild, state, style, transi
     ])
   ]
 })
-export class KeyVisionComponent implements OnInit {
+export class KeyVisionComponent {
   @ViewChild('content') content: ElementRef;
   keyImageState = 'hidden';
   titleState = 'hidden';
@@ -41,9 +41,6 @@ export class KeyVisionComponent implements OnInit {
 
   constructor(
   ) { }
-
-  ngOnInit() {
-  }
 
   onAppear(which) {
     setTimeout(() => {

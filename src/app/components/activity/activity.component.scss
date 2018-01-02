@@ -1,6 +1,7 @@
 div.activity {
   padding: 50px 100px 50px 230px;
   background-color: white;
+  overflow-x: hidden;
   h3.title {
     color: rgb(248, 165, 166);
     font-size: 5.5rem;
@@ -18,6 +19,7 @@ div.activity {
   }
   div.content {
     display: flex;
+    flex-wrap: wrap;
     div.subcontent {
       width: 50%;
       padding-right: 10%;
@@ -43,6 +45,30 @@ div.activity {
       img {
         width: 100%;
         height: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  div.activity {
+    padding: 30px;
+    h3.title {
+      font-size: 2.5rem;
+      margin: 20px 0;
+    }
+    div.something {
+      height: 10px;
+    }
+    h4.subtitle {
+      font-size: 1.3rem;
+    }
+    div.content {
+      div.subcontent {
+        width: 100%;
+      }
+      div.img-div {
+        width: 70%;
       }
     }
   }

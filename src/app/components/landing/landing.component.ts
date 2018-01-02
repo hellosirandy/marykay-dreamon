@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/startWith';
 import { ScrollService } from '../../services/scroll.service';
+import { EventListener } from '@angular/core/src/debug/debug_node';
 
 @Component({
   selector: 'app-landing',
@@ -12,6 +13,7 @@ import { ScrollService } from '../../services/scroll.service';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnDestroy, OnInit {
+  @ViewChild('navbar') navbar;
   @ViewChild('home') home;
   @ViewChild('about') about;
   @ViewChild('activity') activity;
@@ -54,7 +56,7 @@ export class LandingComponent implements OnDestroy, OnInit {
   }
 
   getPosition(ele) {
-    return ele.content.nativeElement.offsetTop - 70;
+    return ele.content.nativeElement.offsetTop - this.navbar.content.nativeElement.offsetHeight;
   }
 
   handleNavbarButtonClick(event) {

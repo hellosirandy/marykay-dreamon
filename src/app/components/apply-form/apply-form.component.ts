@@ -8,6 +8,7 @@ import { FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 })
 export class ApplyFormComponent implements OnInit {
   applyForm: FormGroup;
+  submitTried = false;
 
   constructor() { }
 
@@ -31,15 +32,24 @@ export class ApplyFormComponent implements OnInit {
 
   createMember(): FormGroup[] {
     return [null, null, null, null].fill(new FormGroup({
-      'name': new FormControl(null),
-      'department': new FormControl(null),
-      'phone': new FormControl(null),
-      'email': new FormControl(null),
-      'address': new FormControl(null)
+      'name': new FormControl(null, Validators.required),
+      'department': new FormControl(null, Validators.required),
+      'phone': new FormControl(null, Validators.required),
+      'email': new FormControl(null, Validators.required),
+      'address': new FormControl(null, Validators.required)
     }));
   }
 
+  checkError(controlName, index = null) {
+    return false;
+    // if (index !== null) {
+    //   return (this.applyForm.get('members') as FormArray).controls[index].get(controlName).invalid && this.submitTried;
+    // }
+    // return this.applyForm.get(controlName).invalid && this.submitTried;
+  }
+
   onSubmit() {
+    this.submitTried = true;
     console.log(this.applyForm);
   }
 

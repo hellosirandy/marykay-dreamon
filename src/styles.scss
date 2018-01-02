@@ -1,14 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import './sass/variable.scss';
+html {
+  width: 100vw;
+}
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url('/assets/imgs/key-background.jpg');
+  @media (min-width: 768px) {
+    background-image: url('/assets/imgs/key-background.jpg');
+  }
 }
 
 .parallax {
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
 }

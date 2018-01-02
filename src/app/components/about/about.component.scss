@@ -1,8 +1,10 @@
 @import '../../../sass/variable.scss';
 .about {
+  overflow-x: hidden;
   .section {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     .col {
       display: inline-block;
     }
@@ -43,7 +45,6 @@
       .third-col {
         width: 20%;
         background-image: url('/assets/imgs/about-3.jpg');
-        // background-clip: border-box;
         background-size: 45%;
         background-position: 112.5%;
       }
@@ -58,6 +59,9 @@
       .second-col {
         width: 60%;
         background-color: rgba(226, 148, 145, 0.144);
+        div {
+          max-width: 500px;
+        }
       }
       .col {
         display: -webkit-flex;
@@ -83,6 +87,73 @@
           color: rgb(248, 206, 206);
           font-size: 2.2rem;
           margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .about {
+    .section {
+      .content {
+        padding: 15px;
+        h3.title {
+          font-size: 1.7rem;
+          margin: 15px 0;
+        }
+        p {
+          font-size: 0.5rem;
+          line-height: 1.5;
+        }
+      }
+      &.first-section {
+        .first-col {
+          width: 50%;
+        }
+        .second-col {
+          width: 50%;
+          background-size: 250%;
+          background-position: 30%;
+        }
+      }
+      &.second-section {
+        .first-col {
+          width: 55%;
+        }
+        .second-col {
+          width: 45%;
+        }
+        .third-col {
+          width: 0%;
+        }
+      }
+      &.third-section {
+        min-height: 550px;
+        .first-col {
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+        .second-col {
+          width: 100%;
+          background-color: rgba(226, 148, 145, 0.144);
+          div {
+            max-width: 300px;
+          }
+        }
+        .col {
+          h3 {
+            font-size: 2.5rem;
+            margin: 20px 0;
+          }
+          p {
+            font-size: 1rem;
+            line-height: 1.2;
+            letter-spacing: 1.5px;
+          }
+          h4 {
+            font-size: 1.6rem;
+          }
         }
       }
     }

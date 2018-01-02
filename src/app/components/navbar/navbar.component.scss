@@ -1,10 +1,6 @@
 @import '../../../sass/variable.scss';
 .navbar {
-  // @font-face {
-  //   font-family: Sanfrisco;
-  //   src: url("/assets/fonts/SanFrancisco-Regular.otf") format("opentype");
-  // }
-  height: 70px;
+  height: 65px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0px;
@@ -13,12 +9,13 @@
   z-index: 100;
   .buttons {
     float: right;
-    line-height: 70px;
+    line-height: 65px;
     a {
       text-decoration: unset;
       font-size: 17px;
       color: white;
       margin-right: 25px;
+      
       cursor: pointer;
       transition: color 0.3s ease;
       &:hover {
@@ -26,6 +23,18 @@
       }
       &.selected {
         color: $marykay-pink;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .navbar {
+    height: 50px;
+    .buttons {
+      line-height: 50px;
+      a {
+        font-size: 9px;
+        margin-right: 5px;
       }
     }
   }

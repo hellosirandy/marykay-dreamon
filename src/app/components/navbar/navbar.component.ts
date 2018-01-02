@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Section } from '../../enums/section.enum';
 
 @Component({
@@ -7,6 +7,7 @@ import { Section } from '../../enums/section.enum';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('content') content: ElementRef;
   @Input() selectedSection: Section;
   @Output() navbarButtonClick = new EventEmitter<Section>();
 
