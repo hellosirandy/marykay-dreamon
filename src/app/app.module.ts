@@ -18,6 +18,7 @@ import { ScrollService } from './services/scroll.service';
 import { AppRoutingModule } from './app-routing.module';
 import { ApplyPageComponent } from './components/apply-page/apply-page.component';
 import { ApplyFormComponent } from './components/apply-form/apply-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ApplyFormComponent } from './components/apply-form/apply-form.component
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     ScrollService

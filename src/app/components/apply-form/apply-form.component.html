@@ -2,6 +2,62 @@
   <div class="content">
     <h3 class="title">REGISTER</h3>
     <h4 class="subtitle">開啟夢想的第一步！</h4>
-    <!-- <form ></form> -->
+    <form [formGroup]="applyForm" (ngSubmit)="onSubmit()">
+      <div class="form-block" formGroupName="leader">
+        <div class="row">
+          <input class="teamname" formControlName="teamname" placeholder="隊名">
+          <input class="leader-name" formControlName="name" placeholder="隊長姓名">
+        </div>
+        <div class="row">
+          <input formControlName="department" placeholder="校系">
+        </div>
+        <div class="row">
+          <input formControlName="phone" placeholder="聯絡電話">
+        </div>
+        <div class="row">
+          <input formControlName="email" placeholder="信箱">
+        </div>
+        <div class="row">
+          <input formControlName="address" placeholder="地址">
+        </div>
+      </div>
+      <div class="form-block" 
+        formArrayName="members" *ngFor="let member of applyForm.get('members').controls; let i = index;">
+        <div [formGroupName]="i">
+          <div class="row">
+            <input formControlName="name" placeholder="隊員姓名">
+          </div>
+          <div class="row">
+            <input formControlName="department" placeholder="校系">
+          </div>
+          <div class="row">
+            <input formControlName="phone" placeholder="聯絡電話">
+          </div>
+          <div class="row">
+            <input formControlName="email" placeholder="信箱">
+          </div>
+          <div class="row">
+            <input formControlName="address" placeholder="地址">
+          </div>
+        </div>
+        <!-- Chosen name: {{ orderForm.controls.items.controls[i].controls.name.value }} -->
+      </div>
+      <div class="form-block" formGroupName="questions">
+        <div class="row">
+          <textarea formControlName="impression" rows="5" placeholder="對玫琳凱的第一印象是什麼？"></textarea>
+        </div>
+        <div class="row">
+          <textarea formControlName="motivation" rows="5" placeholder="為什麼想參加美商玫琳凱台灣區校園品牌經理徵選的活動？"></textarea>
+        </div>
+      </div>
+      <div class="form-block">
+        <div class="row">
+          <button type="submit">
+            Submit Now
+          </button>
+        </div>
+      </div>
+      
+    </form>
   </div>
 </div>

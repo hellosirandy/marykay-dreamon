@@ -36,6 +36,8 @@ export class KeyVisionComponent implements OnInit {
   keyImageState = 'hidden';
   titleState = 'hidden';
   buttonState = 'hidden';
+  imgLoad = false;
+  imgAppear = false;
 
   constructor(
   ) { }
@@ -46,12 +48,22 @@ export class KeyVisionComponent implements OnInit {
   onAppear(which) {
     setTimeout(() => {
       if (which === 'img') {
-        this.keyImageState = 'visible';
+        this.imgAppear = true;
+        if (this.imgLoad) {
+          this.keyImageState = 'visible';
+        }
       } else if (which === 'title') {
         this.titleState = 'visible';
       } else {
         this.buttonState = 'visible';
       }
     }, 100);
+  }
+
+  handleImageLoad() {
+    this.imgLoad = true;
+    if (this.imgAppear) {
+      this.keyImageState = 'visible';
+    }
   }
 }
