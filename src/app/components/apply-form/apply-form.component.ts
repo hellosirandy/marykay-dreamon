@@ -38,7 +38,7 @@ export class ApplyFormComponent implements OnInit {
       'address': new FormControl(null)
     }));
   }
-  
+
   onSubmit() {
     console.log(this.applyForm);
   }
