@@ -60,3 +60,11 @@ div.login-page {
     }
   }
 }
+
+@media (max-width: 767px) {
+  div.login-page {
+    div.content {
+      width: 80%;
+    }
+  }
+}
