@@ -50,25 +50,12 @@ div.timeline-item {
       margin: 0;
       font-weight: 100;
       line-height: 1.6;
+      margin-top: 10px;
     }
     div.row {
       margin-top: 20px;
       display: flex;
       justify-content: center;
-      button {
-        background-color: transparent;
-        border: solid 1px #fcb2b2;
-        padding: 10px 15px;
-        color: #fcb2b2;
-        font-size: 15px;
-        font-weight: 100;
-        cursor: pointer;
-        transition: color 0.3s ease, border 0.3s ease;
-        &:hover {
-          color: rgb(197, 16, 82);
-          border: solid 1px rgb(197, 16, 82);
-        }
-      }
     }
   }
   .one-line-content {
@@ -121,13 +108,7 @@ div.timeline-item {
       p {
         font-size: 10px;
         line-height: 1.6;
-      }
-      div.row {
-        button {
-          background-color: transparent;
-          padding: 5px 8px;
-          font-size: 8px;
-        }
+        margin: 5px 0;
       }
     }
     .one-line-content {

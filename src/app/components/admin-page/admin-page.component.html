@@ -1,0 +1,20 @@
+<div class="admin-page">
+  <div class="content">
+    <div class="buttons">
+      <a routerLink="/">返回</a>
+      <a (click)="logOut()">登出</a>
+    </div>
+    <div class="row first">
+      <div class="col">隊名</div>
+      <div class="col">報名日期</div>
+    </div>
+    <div *ngFor="let app of applications|async" class="row" [routerLink]="'/admin/'+app.key">
+      <div class="col">
+        {{app.teamname}}
+      </div>
+      <div class="col">
+        {{app.date| date: 'yyyy/MM/dd'}}
+      </div>
+    </div>
+  </div>
+</div>

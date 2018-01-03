@@ -1,0 +1,44 @@
+<div class="single-application-page">
+  <div class="content" *ngIf="application | async as app">
+    <div class="buttons">
+      <a routerLink="/">返回</a>
+      <a (click)="logOut()">登出</a>
+    </div>
+    <div class="block">
+      <h3 class="block-header">隊名</h3>
+      <p class="question-answer">{{app.teamname}}</p>
+    </div>
+    <div class="block">
+      <h3 class="block-header">隊員</h3>
+      <div class="row first">
+        <div class="col name">姓名</div>
+        <div class="col department">校系</div>
+        <div class="col phone">電話</div>
+        <div class="col email">信箱</div>
+        <div class="col address">地址</div>
+      </div>
+      <div class="row leader">
+        <div class="col name">{{app.leader.name}}</div>
+        <div class="col department">{{app.leader.department}}</div>
+        <div class="col phone">{{app.leader.phone}}</div>
+        <div class="col email">{{app.leader.email}}</div>
+        <div class="col address">{{app.leader.address}}</div>
+      </div>
+      <div class="row" *ngFor="let member of app.members">
+        <div class="col name">{{member.name}}</div>
+        <div class="col department">{{member.department}}</div>
+        <div class="col phone">{{member.phone}}</div>
+        <div class="col email">{{member.email}}</div>
+        <div class="col address">{{member.address}}</div>
+      </div>
+    </div>
+    <div class="block">
+      <h3 class="block-header">對玫琳凱的第一印象是什麼？</h3>
+      <p class="question-answer" [innerHtml]="app.impression"></p>
+    </div>
+    <div class="block">
+      <h3 class="block-header">為什麼想參加美商玫琳凱台灣區校園品牌經理徵選的活動？</h3>
+      <p class="question-answer" [innerHtml]="app.motivation"></p>
+    </div>
+  </div>
+</div>

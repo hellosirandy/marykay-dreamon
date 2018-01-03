@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -24,6 +25,12 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FirebaseConfig } from './firebase-config';
+import { ApplyService } from './services/apply.service';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { SingleApplicationPageComponent } from './components/single-application-page/single-application-page.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +47,9 @@ import { FirebaseConfig } from './firebase-config';
     LandingComponent,
     ApplyPageComponent,
     ApplyFormComponent,
+    AdminPageComponent,
+    SingleApplicationPageComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +61,11 @@ import { FirebaseConfig } from './firebase-config';
     AngularFireDatabaseModule,
   ],
   providers: [
-    ScrollService
+    ApplyService,
+    ScrollService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    AuthService,
+    AuthGuardService,
   ],
   bootstrap: [AppComponent]
 })

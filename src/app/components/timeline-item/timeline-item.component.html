@@ -19,15 +19,8 @@
   </div>
   
   <div class="content" *ngIf="item.content.title">
-    <h3 class="content-title">
-      {{item.content.title}}
-    </h3>
-    <p *ngFor="let p of item.content.paragraphs">
-      {{p}}
-    </p>
-    <div *ngIf="item.title==='MAR'" class="row">
-      <button>> What is MaryKayChallenges</button>
-    </div>
+    <h3 class="content-title" [innerHtml]="item.content.title"></h3>
+    <p *ngFor="let p of item.content.paragraphs" [innerHtml]="p"></p>
   </div>
   <div class="one-line-content" *ngIf="!item.content.title">
     <h3 class="one-line-title" [ngClass]="{'big': item.title === 'JUN'}">

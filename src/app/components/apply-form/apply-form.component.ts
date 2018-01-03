@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
+import { Member } from '../../interfaces/member';
+import { Application } from '../../interfaces/application';
+import { ApplyService } from '../../services/apply.service';
 
 @Component({
   selector: 'app-apply-form',
@@ -9,8 +12,11 @@ import { FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 export class ApplyFormComponent implements OnInit {
   applyForm: FormGroup;
   submitTried = false;
+  applicationFinished = false;
 
-  constructor() { }
+  constructor(
+    private apply: ApplyService,
+  ) { }
 
   ngOnInit() {
     this.applyForm = new FormGroup({
@@ -29,6 +35,7 @@ export class ApplyFormComponent implements OnInit {
       })
     });
     this.createMember();
+    window.scrollTo(0, 0);
   }
 
   createMember() {
@@ -54,10 +61,33 @@ export class ApplyFormComponent implements OnInit {
 
   onSubmit() {
     this.submitTried = true;
-    console.log(this.applyForm.getRawValue());
     if (this.applyForm.valid) {
       const applyForm = this.applyForm.getRawValue();
+      const teamname: string = applyForm.leader.teamname;
+      const leader: Member = this.getMember(applyForm.leader);
+      const members: Member[] = applyForm.members.map(m => this.getMember(m));
+      const impression: string = applyForm.questions.impression;
+      const motivation: string = applyForm.questions.motivation;
+      const date = Date.now();
+      const reverseDate = -date;
+      const application: Application = { teamname, leader, members, impression, motivation, date, reverseDate };
+      this.submitApplication(application);
     }
+  }
+
+  async submitApplication(app: Application) {
+    await this.apply.createApplication(app);
+    this.applicationFinished = true;
+  }
+
+  getMember(member): Member {
+    return {
+      name: member.name,
+      department: member.department,
+      phone: member.phone,
+      email: member.email,
+      address: member.address
+    };
   }
 
   getMembersControl() {

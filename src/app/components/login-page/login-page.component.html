@@ -1,0 +1,24 @@
+<div class="login-page">
+  <div class="content">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div *ngIf="errorMessage" class="error-message">
+          <p>{{errorMessage}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <input type="text" formControlName="email" placeholder="Email"
+          [ngClass]="{'error': loginForm.get('email').invalid && submitTried}">
+      </div>
+      <div class="row">
+        <input type="password" formControlName="password" placeholder="Password"
+          [ngClass]="{'error': loginForm.get('password').invalid && submitTried}">
+      </div>
+      <div class="row">
+        <button type="submit">
+          登入
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

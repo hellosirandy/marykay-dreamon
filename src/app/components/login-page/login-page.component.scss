@@ -1,0 +1,62 @@
+div.login-page {
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 100vh;
+  div.content {
+    padding: 150px 0;
+    width: 40%;
+    margin: auto;
+    div.row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      margin: 20px 0;
+    }
+    div.error-message {
+      margin: 0 8.5px;
+      background-color: #f4c9c9;
+      padding: 0 8px;
+      width: 100%;
+      p {
+        color: #ce4f4f;
+      }
+    }
+    input, textarea {
+      width: 100%;
+      margin: 0 10px;
+      font-size: 1rem;
+      border: 1px solid #c28b8b;
+      line-height: 1.8;
+      padding: 5px;
+      background-color: transparent;
+      color: black;
+      outline: none;
+      &.error {
+        border: 1px solid red;
+      }
+    }
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #c28b8b;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: #c28b8b;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: #c28b8b;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: #c28b8b;
+    }
+    button[type=submit], button[type=button] {
+      width: 100%;
+      margin: 0 8.5px;
+      font-size: 1rem;
+      background-color: #f4c9c9;
+      color: white;
+      line-height: 2;
+      outline: none;
+      cursor: pointer;
+      border: unset;
+    }
+  }
+}

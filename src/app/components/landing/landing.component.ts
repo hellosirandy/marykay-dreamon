@@ -50,6 +50,7 @@ export class LandingComponent implements OnDestroy, OnInit {
         }
       }
     });
+    window.scrollTo(0, 0);
   }
 
   ngOnDestroy() {

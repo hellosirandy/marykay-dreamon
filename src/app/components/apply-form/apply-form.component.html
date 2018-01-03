@@ -1,64 +1,70 @@
 <div class="apply-form">
   <div class="content">
     <h3 class="title">REGISTER</h3>
-    <h4 class="subtitle">開啟夢想的第一步！</h4>
+    <h4 *ngIf="!applicationFinished" class="subtitle">開啟夢想的第一步！</h4>
+    <h4 *ngIf="applicationFinished" class="subtitle">報名完成！</h4>
     <form [formGroup]="applyForm" (ngSubmit)="onSubmit()">
-      <div class="form-block" formGroupName="leader">
-        <div class="row">
-          <input class="teamname" [ngClass]="{'error': checkError('leader.teamname')}"
-            formControlName="teamname" placeholder="隊名">
-          <input class="leader-name" [ngClass]="{'error': checkError('leader.name')}"
-            formControlName="name" placeholder="隊長姓名">
-        </div>
-        <div class="row">
-          <input formControlName="department" [ngClass]="{'error': checkError('leader.department')}" placeholder="校系">
-        </div>
-        <div class="row">
-          <input formControlName="phone" [ngClass]="{'error': checkError('leader.phone')}" placeholder="聯絡電話">
-        </div>
-        <div class="row">
-          <input formControlName="email" [ngClass]="{'error': checkError('leader.email')}" placeholder="信箱">
-        </div>
-        <div class="row">
-          <input formControlName="address" [ngClass]="{'error': checkError('leader.address')}" placeholder="地址">
-        </div>
-      </div>
-      <div class="form-block" 
-        formArrayName="members" *ngFor="let member of getMembersControl() ; let i = index;">
-        <div [formGroupName]="i">
+      <div *ngIf="!applicationFinished">
+        <div class="form-block" formGroupName="leader">
           <div class="row">
-            <input formControlName="name" [ngClass]="{'error': checkError('name', i)}" placeholder="姓名">
+            <input class="teamname" [ngClass]="{'error': checkError('leader.teamname')}"
+              formControlName="teamname" placeholder="隊名">
+            <input class="leader-name" [ngClass]="{'error': checkError('leader.name')}"
+              formControlName="name" placeholder="隊長姓名">
           </div>
           <div class="row">
-            <input formControlName="department" [ngClass]="{'error': checkError('department', i)}" placeholder="校系">
+            <input formControlName="department" [ngClass]="{'error': checkError('leader.department')}" placeholder="校系">
           </div>
           <div class="row">
-            <input formControlName="phone" [ngClass]="{'error': checkError('phone', i)}" placeholder="聯絡電話">
+            <input formControlName="phone" [ngClass]="{'error': checkError('leader.phone')}" placeholder="聯絡電話">
           </div>
           <div class="row">
-            <input formControlName="email" [ngClass]="{'error': checkError('email', i)}" placeholder="信箱">
+            <input formControlName="email" [ngClass]="{'error': checkError('leader.email')}" placeholder="信箱">
           </div>
           <div class="row">
-            <input formControlName="address" [ngClass]="{'error': checkError('address', i)}" placeholder="地址">
+            <input formControlName="address" [ngClass]="{'error': checkError('leader.address')}" placeholder="地址">
           </div>
         </div>
-      </div>
-      <div class="form-block" formGroupName="questions">
-        <div class="row">
-          <textarea formControlName="impression" [ngClass]="{'error': checkError('questions.impression')}" 
-            rows="4" placeholder="對玫琳凱的第一印象是什麼？">
-          </textarea>
+        <div class="form-block" 
+          formArrayName="members" *ngFor="let member of getMembersControl() ; let i = index;">
+          <div [formGroupName]="i">
+            <div class="row">
+              <input formControlName="name" [ngClass]="{'error': checkError('name', i)}" placeholder="姓名">
+            </div>
+            <div class="row">
+              <input formControlName="department" [ngClass]="{'error': checkError('department', i)}" placeholder="校系">
+            </div>
+            <div class="row">
+              <input formControlName="phone" [ngClass]="{'error': checkError('phone', i)}" placeholder="聯絡電話">
+            </div>
+            <div class="row">
+              <input formControlName="email" [ngClass]="{'error': checkError('email', i)}" placeholder="信箱">
+            </div>
+            <div class="row">
+              <input formControlName="address" [ngClass]="{'error': checkError('address', i)}" placeholder="地址">
+            </div>
+          </div>
         </div>
-        <div class="row">
-          <textarea formControlName="motivation" [ngClass]="{'error': checkError('questions.motivation')}" 
-            rows="4" placeholder="為什麼想參加美商玫琳凱台灣區校園品牌經理徵選的活動？">
-          </textarea>
+        <div class="form-block" formGroupName="questions">
+          <div class="row">
+            <textarea formControlName="impression" [ngClass]="{'error': checkError('questions.impression')}" 
+              rows="4" placeholder="對玫琳凱的第一印象是什麼？">
+            </textarea>
+          </div>
+          <div class="row">
+            <textarea formControlName="motivation" [ngClass]="{'error': checkError('questions.motivation')}" 
+              rows="4" placeholder="為什麼想參加美商玫琳凱台灣區校園品牌經理徵選的活動？">
+            </textarea>
+          </div>
         </div>
       </div>
       <div class="form-block">
         <div class="row">
-          <button type="submit">
+          <button *ngIf="!applicationFinished" type="submit">
             Submit Now
+          </button>
+          <button *ngIf="applicationFinished" type="button" routerLink="/">
+            回首頁
           </button>
         </div>
       </div>
