@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="form-block" 
-        formArrayName="members" *ngFor="let member of applyForm.get('members').controls; let i = index;">
+        formArrayName="members" *ngFor="let member of getMembersControl() ; let i = index;">
         <div [formGroupName]="i">
           <div class="row">
             <input formControlName="name" [ngClass]="{'error': checkError('name', i)}" placeholder="姓名">

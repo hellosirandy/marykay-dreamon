@@ -20,6 +20,11 @@ import { ApplyPageComponent } from './components/apply-page/apply-page.component
 import { ApplyFormComponent } from './components/apply-form/apply-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FirebaseConfig } from './firebase-config';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +45,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(FirebaseConfig, 'marykay-dreamon'),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
   ],
   providers: [
     ScrollService

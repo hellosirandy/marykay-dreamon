@@ -54,6 +54,14 @@ export class ApplyFormComponent implements OnInit {
 
   onSubmit() {
     this.submitTried = true;
+    console.log(this.applyForm.getRawValue());
+    if (this.applyForm.valid) {
+      const applyForm = this.applyForm.getRawValue();
+    }
+  }
+
+  getMembersControl() {
+    return (this.applyForm.get('members') as FormArray).controls;
   }
 
 }
