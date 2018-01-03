@@ -13,6 +13,7 @@ import { EventListener } from '@angular/core/src/debug/debug_node';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnDestroy, OnInit {
+  @ViewChild('landing') landing;
   @ViewChild('navbar') navbar;
   @ViewChild('home') home;
   @ViewChild('about') about;

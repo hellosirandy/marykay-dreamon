@@ -5,8 +5,10 @@
     <form [formGroup]="applyForm" (ngSubmit)="onSubmit()">
       <div class="form-block" formGroupName="leader">
         <div class="row">
-          <input class="teamname" [ngClass]="{'error': checkError('leader.teamname')}" formControlName="teamname" placeholder="隊名">
-          <input class="leader-name" [ngClass]="{'error': checkError('leader.name')}" formControlName="name" placeholder="隊長姓名">
+          <input class="teamname" [ngClass]="{'error': checkError('leader.teamname')}"
+            formControlName="teamname" placeholder="隊名">
+          <input class="leader-name" [ngClass]="{'error': checkError('leader.name')}"
+            formControlName="name" placeholder="隊長姓名">
         </div>
         <div class="row">
           <input formControlName="department" [ngClass]="{'error': checkError('leader.department')}" placeholder="校系">
@@ -25,7 +27,7 @@
         formArrayName="members" *ngFor="let member of applyForm.get('members').controls; let i = index;">
         <div [formGroupName]="i">
           <div class="row">
-            <input formControlName="name" [ngClass]="{'error': applyForm.get('members').controls[i].get('name').invalid && submitTried}" [placeholder]="applyForm.get('members').controls[i].valid">
+            <input formControlName="name" [ngClass]="{'error': checkError('name', i)}" placeholder="姓名">
           </div>
           <div class="row">
             <input formControlName="department" [ngClass]="{'error': checkError('department', i)}" placeholder="校系">
@@ -40,14 +42,17 @@
             <input formControlName="address" [ngClass]="{'error': checkError('address', i)}" placeholder="地址">
           </div>
         </div>
-        <!-- Chosen name: {{ orderForm.controls.items.controls[i].controls.name.value }} -->
       </div>
       <div class="form-block" formGroupName="questions">
         <div class="row">
-          <textarea formControlName="impression" rows="4" placeholder="對玫琳凱的第一印象是什麼？"></textarea>
+          <textarea formControlName="impression" [ngClass]="{'error': checkError('questions.impression')}" 
+            rows="4" placeholder="對玫琳凱的第一印象是什麼？">
+          </textarea>
         </div>
         <div class="row">
-          <textarea formControlName="motivation" rows="4" placeholder="為什麼想參加美商玫琳凱台灣區校園品牌經理徵選的活動？"></textarea>
+          <textarea formControlName="motivation" [ngClass]="{'error': checkError('questions.motivation')}" 
+            rows="4" placeholder="為什麼想參加美商玫琳凱台灣區校園品牌經理徵選的活動？">
+          </textarea>
         </div>
       </div>
       <div class="form-block">

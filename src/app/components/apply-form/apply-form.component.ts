@@ -22,35 +22,38 @@ export class ApplyFormComponent implements OnInit {
         'email': new FormControl(null, Validators.required),
         'address': new FormControl(null, Validators.required),
       }),
-      'members': new FormArray(this.createMember()),
+      'members': new FormArray([]),
       'questions': new FormGroup({
         'impression': new FormControl(null, Validators.required),
         'motivation': new FormControl(null, Validators.required)
       })
     });
+    this.createMember();
   }
 
-  createMember(): FormGroup[] {
-    return [null, null, null, null].fill(new FormGroup({
-      'name': new FormControl(null, Validators.required),
-      'department': new FormControl(null, Validators.required),
-      'phone': new FormControl(null, Validators.required),
-      'email': new FormControl(null, Validators.required),
-      'address': new FormControl(null, Validators.required)
-    }));
+  createMember() {
+    for (let i = 0; i < 4; i++) {
+      (this.applyForm.get('members') as FormArray).push(
+        new FormGroup({
+          'name': new FormControl(null, Validators.required),
+          'department': new FormControl(null, Validators.required),
+          'phone': new FormControl(null, Validators.required),
+          'email': new FormControl(null, Validators.required),
+          'address': new FormControl(null, Validators.required)
+        })
+      );
+    }
   }
 
   checkError(controlName, index = null) {
-    return false;
-    // if (index !== null) {
-    //   return (this.applyForm.get('members') as FormArray).controls[index].get(controlName).invalid && this.submitTried;
-    // }
-    // return this.applyForm.get(controlName).invalid && this.submitTried;
+    if (index !== null) {
+      return (this.applyForm.get('members') as FormArray).controls[index].get(controlName).invalid && this.submitTried;
+    }
+    return this.applyForm.get(controlName).invalid && this.submitTried;
   }
 
   onSubmit() {
     this.submitTried = true;
-    console.log(this.applyForm);
   }
 
 }

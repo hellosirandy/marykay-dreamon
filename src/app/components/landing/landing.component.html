@@ -1,7 +1,9 @@
-<app-navbar #navbar [selectedSection]="currentElement" (navbarButtonClick)="handleNavbarButtonClick($event)"></app-navbar>
-<app-key-vision #home></app-key-vision>
-<app-about #about></app-about>
-<app-activity #activity></app-activity>
-<app-timeline #timeline></app-timeline>
-<app-reward #reward></app-reward>
-<app-apply #apply></app-apply>
+<div class="landing" #landing>
+  <app-navbar #navbar [selectedSection]="currentElement" (navbarButtonClick)="handleNavbarButtonClick($event)"></app-navbar>
+  <app-key-vision #home></app-key-vision>
+  <app-about #about></app-about>
+  <app-activity #activity></app-activity>
+  <app-timeline #timeline></app-timeline>
+  <app-reward #reward></app-reward>
+  <app-apply #apply></app-apply>
+</div>
