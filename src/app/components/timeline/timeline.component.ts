@@ -41,7 +41,7 @@ export class TimelineComponent implements OnInit {
   items = [
     { titleLeft: true, title: 'MAR', subtitle: 'MAR - APR',
       content: {
-        title: '活動開跑！</br>(線上報名 + 投遞兩夜計畫書):<br>時間: 3/5 – 4/15',
+        title: '活動開跑！</br>(線上報名 + 投遞兩頁計畫書):<br>時間: 3/5 – 4/15',
         paragraphs: ['前往Dream On! 美商玫琳凱台灣區校園品牌經理徵選大賽活動官網報名區以隊伍為單位填寫團隊資料(一人為代表報名)，並提交Mary Kay的逆襲-品牌扭轉乾坤兩頁企劃書。',
           '〔什麼是Mary Kay的逆襲-品牌扭轉乾坤？〕<br>你知道直銷是什麼嗎？玫琳凱這麼優秀的企業卻深受直銷的困擾！因此我們想請優秀的你妳你，一起來重新形塑玫琳凱台灣的形象！']
       }
@@ -49,7 +49,7 @@ export class TimelineComponent implements OnInit {
     { titleLeft: false, title: 'MAR - APR', subtitle: '',
       content: {
         title: '公布前八強<br>時間: 4/19',
-        paragraphs: ['入闈前八強的隊伍，玫琳凱將提供產品訓練、企業品牌文化經營等課程讓參賽隊伍有更多背景知識來執行接下來為期一個月的的#MaryKaychallenges。']
+        paragraphs: ['入圍前八強的隊伍，玫琳凱將提供產品訓練、企業品牌文化經營等課程讓參賽隊伍有更多背景知識來執行接下來為期一個月的#MaryKaychallenges。']
       }
     },
     {
