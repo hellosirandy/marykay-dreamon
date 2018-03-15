@@ -41,28 +41,28 @@ export class TimelineComponent implements OnInit {
   items = [
     { titleLeft: true, title: 'MAR', subtitle: 'MAR - APR',
       content: {
-        title: '活動開跑！</br>(線上報名 + 投遞兩頁計畫書):<br>時間: 3/5 – 4/15',
-        paragraphs: ['前往Dream On! 美商玫琳凱台灣區校園品牌經理徵選大賽活動官網報名區以隊伍為單位填寫團隊資料(一人為代表報名)，並提交Mary Kay的逆襲-品牌扭轉乾坤兩頁企劃書。',
-          '〔什麼是Mary Kay的逆襲-品牌扭轉乾坤？〕<br>你知道直銷是什麼嗎？玫琳凱這麼優秀的企業卻深受直銷的困擾！因此我們想請優秀的你妳你，一起來重新形塑玫琳凱台灣的形象！']
+        title: '活動開跑！</br>(線上報名 + 投遞二至六頁企畫書):<br>時間: 3/5 – 4/15',
+        paragraphs: ['Action！Dream On！美商玫琳凱夢想啟動商業競賽活動官網報名區以隊伍為單位填寫團隊資料(一人為代表報名)，並提交Mary Kay的逆襲-品牌扭轉乾坤企劃書。',
+          '〔什麼是MaryKay品牌翻轉企劃書？〕<br>你知道直銷是什麼嗎？玫琳凱這麼優秀的企業卻深受直銷的困擾！因此我們想請優秀的你妳你，一起來重新形塑玫琳凱台灣的形象！']
       }
     },
     { titleLeft: false, title: 'MAR - APR', subtitle: '',
       content: {
-        title: '公布前八強<br>時間: 4/19',
-        paragraphs: ['入圍前八強的隊伍，玫琳凱將提供產品訓練、企業品牌文化經營等課程讓參賽隊伍有更多背景知識來執行接下來為期一個月的#MaryKaychallenges。']
+        title: '公布通過初選隊伍<br>時間: 4/19',
+        paragraphs: ['通過初選的隊伍，玫琳凱將提供三場工作坊，內容包含彩妝產業概論與實務、企業主管經驗分享、個案討論、企劃書個別指導及商業競賽簡報與呈現等一系列課程']
       }
     },
     {
       titleLeft: false, title: 'APR - MAY', subtitle: '',
       content: {
-        title: '社群影響力! #MaryKayChallenges<br>時間: 4/29 – 5/20',
-        paragraphs: ['為期一整個月的#MaryKayChallenge參賽隊伍將運用創意、高度執行力去完成一整個月每週一次共四次的艱難任務!']
+        title: '社群影響力! #MaryKayChallenge<br>時間: 4/29 – 5/20',
+        paragraphs: ['4/29 – 5/20進行的Mary Kay Challenge，內容包含社群媒體與創意方案的提案分析、實際執行及成效檢討。']
       }
     },
     { titleLeft: false, title: 'JUN', subtitle: '',
       content: {
-        title: 'Dream On! 夢想大舞台<br>2018.6.2',
-        paragraphs: ['以【Dream On! 玫琳凱扭轉乾坤】為題目，結合MaryKayChallenges做一個十分鐘的Presentation。最後選出前五名，頒獎典禮。']
+        title: 'Dream On! 夢想大舞台<br>時間: 6/2',
+        paragraphs: ['參賽團隊將於6/2站上決選舞台，整合參賽企劃內容與Mary Kay Challenge，向公司主管進行10分鐘的簡報說明。']
       }
     },
     { titleLeft: true, title: 'JUN', subtitle: '', content: '公佈優勝! Dream On!' }

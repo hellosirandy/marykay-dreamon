@@ -14,7 +14,7 @@ export class NavbarComponent {
   buttons: any[] = [
     { section: 'home', content: 'Home' },
     { section: 'about', content: '關於Mary Kay' },
-    { section: 'activity', content: '校園品牌經理徵選' },
+    { section: 'activity', content: '夢想啟動商業競賽' },
     { section: 'timeline', content: '活動時程' },
     { section: 'reward', content: '獎勵方式' },
     { section: 'apply', content: '立即報名' },
